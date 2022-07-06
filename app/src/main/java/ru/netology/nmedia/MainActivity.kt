@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(binding.likes)
+//        setContentView(binding.likes)
 
         val post = Post(
             id = 1,
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val counts = Counts(
             countLikes = 1299,
             countShare = 1298,
-            countVisibility = 0
+            countVisibility = 7
         )
 
         with(binding) {
@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity() {
             published.text = post.published
             content.text = post.content
 
-            countLikes.text = counts.countLikes.toString()
-            countShare.text = counts.countShare.toString()
-            visibility.text = counts.countVisibility.toString()
+            countLikes.text = convert(counts.countLikes)
+            countShare.text = convert(counts.countShare)
+            visibility.text = convert(counts.countVisibility)
 
             likes.setOnClickListener {
                 post.isLike = !post.isLike
@@ -55,6 +55,15 @@ class MainActivity : AppCompatActivity() {
                 counts.countShare++
                 countShare.text = convert(counts.countShare)
             }
+//            binding.root.setOnClickListener{
+//                println("binding root")
+//            }
+//            binding.likes.setOnClickListener{
+//                println("binding likes")
+//            }
+//            avatar.setOnClickListener {
+//                println("avatar")
+//            }
         }
     }
 }
