@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val repository = InMemoryPostRepository()
+        val postViewModel = PostViewModel()
 
         val viewModel by viewModels<PostViewModel>()
         viewModel.data.observe(this) { post ->
@@ -34,16 +34,18 @@ class MainActivity : AppCompatActivity() {
                 }
                 likes.setImageResource(likeImage)
 
-                likes.setOnClickListener {
-                    viewModel.like()
-                }
-                countLikes.text = repository.convert(post.countLikes)
-                share.setOnClickListener {
-                    viewModel.share()
-                }
-                countShare.text = repository.convert(post.countShare)
+                countLikes.text = postViewModel.convert(post.countLikes)
+
+                countShare.text = postViewModel.convert(post.countShare)
             }
         }
+        binding.likes.setOnClickListener {
+            viewModel.like()
+        }
+        binding.share.setOnClickListener {
+            viewModel.share()
+        }
+
     }
 
 }
