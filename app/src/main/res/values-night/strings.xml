@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="post_menu_remove">Remove</string>
+    <string name="post_text">Post text</string>
+    <string name="empty_post_error">Post is blank</string>
+    <string name="cancel">Cancel</string>
+</resources>
