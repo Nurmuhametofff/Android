@@ -6,26 +6,12 @@ import ru.netology.nmedia.repository.PostRepository
 
 class PostViewModel: ViewModel() {
     private val repository: PostRepository = InMemoryPostRepository()
-    val data = repository.get()
-    fun like(){
-        repository.like()
+    val data = repository.getAll()
+    fun likeById(id: Long){
+        repository.likeById(id)
     }
-    fun share(){
-        repository.share()
+    fun shareById(id: Long){
+        repository.shareById(id)
     }
-    fun convert(num: Int): String {
-        return if (num < 1000) {
-            num.toString()
-        } else if (num < 10000) {
-            val thousand = num / 1000
-            val hundred = ((num % 1000) / 100)
-            String.format("$thousand.$hundred k")
-        } else if (num < 1000000) {
-            val tenThousand = num / 1000
-            String.format("$tenThousand k")
-        } else {
-            val million = num / 1000000
-            String.format("$million M")
-        }
-    }
+
 }
