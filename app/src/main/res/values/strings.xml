@@ -6,4 +6,9 @@
     <string name="isLike">islike</string>
     <string name="isshare">isShare</string>
     <string name="isvisibility">isVisibility</string>
+    <string name="post_menu_remove">Remove</string>
+    <string name="post_menu_edit">Edit</string>
+    <string name="post_text">Post text</string>
+    <string name="empty_post_error">Post is blank</string>
+    <string name="cancel">Cancel</string>
 </resources>
