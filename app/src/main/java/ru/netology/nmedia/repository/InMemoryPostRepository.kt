@@ -14,7 +14,9 @@ class InMemoryPostRepository : PostRepository {
             published = "23 сентября в 10:12",
             isLike = false,
             countLikes = 2399L,
-            countShare = 523L
+            countShare = 523L,
+            video = "https://www.youtube.com/watch?v=_cMxraX_5RE"
+
         ),
         Post(
             id = 8,
@@ -32,7 +34,8 @@ class InMemoryPostRepository : PostRepository {
             published = "22 сентября в 10:12",
             isLike = false,
             countLikes = 23523L,
-            countShare = 523L
+            countShare = 523L,
+            video = "https://www.youtube.com/watch?v=_cMxraX_5RE"
         ),
         Post(
             id = 6,

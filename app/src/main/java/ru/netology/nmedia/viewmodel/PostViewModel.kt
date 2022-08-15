@@ -13,7 +13,7 @@ val empty = Post(
     "",
     "now",
     false,
-    0,
+    null,
     0
 )
 
@@ -36,7 +36,6 @@ class PostViewModel : ViewModel() {
 
     fun edit(post: Post){
         edited.value = post
-
     }
 
 

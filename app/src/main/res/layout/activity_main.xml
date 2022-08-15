@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/barrier_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,60 +19,16 @@
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/card_post" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier_bottom"
-        android:layout_width="wrap_content"
-        app:constraint_referenced_ids="close_editor"
-        app:barrierDirection="top"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/content"
-        android:layout_width="0dp"
-        android:padding="@dimen/common_spacing"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:inputType="textMultiLine"
-        android:importantForAutofill="no"
-        android:hint="@string/post_text"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toStartOf="@+id/save"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:id="@+id/save"
-        app:layout_constraintTop_toTopOf="@+id/content"
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/create"
+        android:layout_margin="@dimen/common_spacing"
+        android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/ic_baseline_send_24"
-        android:padding="@dimen/common_spacing_small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/close_editor"
+        android:layout_gravity="end|bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:icon="@drawable/ic_close_editor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/content"
-        style="@style/CastomCloseEditor"
+
         />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/close_editor"
-        app:layout_constraintEnd_toStartOf="@+id/close_editor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:icon="@drawable/edit_text"
-        style="@style/CastomCloseTextEditor"
-        android:text="Edited"
-        />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:constraint_referenced_ids="close_editor, edit_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
