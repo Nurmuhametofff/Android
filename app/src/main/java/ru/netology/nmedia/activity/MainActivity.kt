@@ -51,6 +51,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onShare(post: Post) {
+                    val intent = Intent().apply {
+                        action = Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_TEXT, post.content)
+                        type = "text/plain"
+                    }
+
+                    val shareIntent = Intent.createChooser(intent, getString(R.string.chooser_share_post))
+                    startActivity(shareIntent)
                     viewModel.shareById(post.id)
                 }
 
@@ -65,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                     val intentVideo = Intent(Intent.ACTION_VIEW, Uri.parse(post.video))
                     startActivity(intentVideo)
                 }
+
             }
             )
 

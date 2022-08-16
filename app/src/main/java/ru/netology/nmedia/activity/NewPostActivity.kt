@@ -26,6 +26,18 @@ class NewPostActivity : AppCompatActivity() {
 
             finish()
         }
+        val content = intent.getStringExtra(Intent.EXTRA_TEXT)
+        binding.content.setText(content)
+
+        intent?.let {
+            if (it.action != Intent.ACTION_SEND){
+                return@let
+            }
+            val text = it.getStringExtra(Intent.EXTRA_TEXT)
+            if (text.isNullOrBlank()){
+                Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
 }
