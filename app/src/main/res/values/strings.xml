@@ -12,4 +12,7 @@
     <string name="empty_post_error">Post is blank</string>
     <string name="cancel">Cancel</string>
     <string name="start_count">0</string>
+    <string name="empty_content">Content is empty</string>
+    <string name="edit_post_hint">Edit post</string>
+    <string name="edited_text">Edited</string>
 </resources>

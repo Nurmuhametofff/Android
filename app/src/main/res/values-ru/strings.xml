@@ -13,5 +13,8 @@
     <string name="empty_post_error">Пустой пост</string>
     <string name="cancel">Отмена</string>
     <string name="start_count">0</string>
+    <string name="empty_content">Пустой контент</string>
+    <string name="edit_post_hint">Редактирвать пост</string>
+    <string name="edited_text">Редактировать</string>
 
 </resources>
