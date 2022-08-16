@@ -16,5 +16,6 @@
     <string name="empty_content">Пустой контент</string>
     <string name="edit_post_hint">Редактирвать пост</string>
     <string name="edited_text">Редактировать</string>
+    <string name="chooser_share_post">чузер</string>
 
 </resources>
