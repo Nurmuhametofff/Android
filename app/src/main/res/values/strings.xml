@@ -15,4 +15,5 @@
     <string name="empty_content">Content is empty</string>
     <string name="edit_post_hint">Edit post</string>
     <string name="edited_text">Edited</string>
+    <string name="chooser_share_post">chooser</string>
 </resources>
